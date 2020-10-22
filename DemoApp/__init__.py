@@ -136,31 +136,3 @@ def create_app():
 			return render_template('registration.html', form=reg_form)
 
 	return app
-
-
-if __name__ == '__main__':
-	main()
-
-"""
-	@app.route('/create/<user>')
-	def create_user(user):
-		num = { "876-5309" : True, "410-1234" : False }
-		u = User.create(username=user, phone_numbers=num)
-		print(u)
-		return '%s created' % user
-
-			ixcept
-	@app.route('/list')
-	def list_users():
-		s = ''
-		users = User.objects.all()
-		for u in users:
-			s += u.username
-			if u.phone_numbers != None:
-				for k, v in u.phone_numbers.items():
-					print('%s %d' % (k,v))
-
-			s += '<br/>'
-		return render_template('user_list.html', users=users) 
-
-"""
