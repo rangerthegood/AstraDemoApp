@@ -1,0 +1,18 @@
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+                <ul class=flashes>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+        {% endif %}
+{% endwith %}
+
+<form action="{{ url_for('login') }}" method="POST" accept-charset="utf-8">
+{{ form.username }}
+{{ form.password }}
+{{ form.csrf_token }}
+<input type="submit" value="Login" />
+<br>
+Click <a href="{{ url_for('registration') }}">here</a>! to register
+</form>
